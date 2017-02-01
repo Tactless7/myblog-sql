@@ -1,0 +1,12 @@
+{
+    "name": "simplon/30-blogmysql",
+    "require": {
+        "j4mie/idiorm": "^1.5"
+    },
+    "authors": [
+        {
+            "name": "Juliane Blier",
+            "email": "blier.juliane@gmail.com"
+        }
+    ]
+}
