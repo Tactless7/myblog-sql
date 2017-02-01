@@ -22,4 +22,13 @@
       return ORM::for_table('posts')->find_many();
     }
 
+    public function addData($title, $author, $content, $created_at){
+      $post = ORM::for_table('posts')->create();
+      $post->title = $title;
+      $post->author = $author;
+      $post->content = $content;
+      $post->created_at = $created_at;
+      $post->save();
+    }
+
   }

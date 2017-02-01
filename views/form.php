@@ -9,10 +9,16 @@
     <div class="ui container">
       <div class="ui huge centered header">Ajouter un article</div>
 
-      <form action="submit_form.php" method="post" class="ui form">
-        <label for="title">Titre : <input type="text" name="title" max="50"/></label>
-        <label for="author">Auteur : <input type="text" name="author" max="50"></label>
-        <label for="content">Contenu : <textarea name="content" rows="8" cols="80"></textarea></label>
+      <form action="controllers/submit_form.php" method="post" class="ui form">
+        <div class="required field">
+          <label for="title">Titre </label><input type="text" name="title" max="50"/>
+        </div>
+        <div class="required field">
+          <label for="author">Auteur </label><input type="text" name="author" max="50">
+        </div>
+        <div class="required field">
+          <label for="content">Contenu </label><textarea name="content" rows="8" cols="80"></textarea>
+        </div>
         <button type="submit" class="ui green button">Ajouter</button>
       </form>
     </div>
