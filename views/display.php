@@ -7,16 +7,25 @@
   </head>
   <body>
     <div class="ui marged container">
-      <h1 class="ui header">Mon Blog</h1>
-      <?php foreach ($articles as $value) :?>
-      <div class="ui card">
-        <div class="content">
-          <div class="header"><?= $value['title'] ?></div>
-          <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
-          <div class="description"><?= $value['content']?></div>
+
+      <h1 class="ui huge marged centered header">Mon Blog</h1>
+      <div class="ui fourteen wide columns grid">
+        <div class="ui four wide columns">
+          <a href="index.php?p=form"><button class="ui button" type="button">Ajouter un article</button></a>
+        </div>
+        <div class="ui fourteen wide columns">
+          <?php foreach ($articles as $value) :?>
+          <div class="ui card">
+            <div class="content">
+              <div class="header"><?= $value['title'] ?></div>
+              <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
+              <div class="description"><?= $value['content']?></div>
+            </div>
+          </div>
+          <?php endforeach ?>
         </div>
       </div>
-    <?php endforeach ?>
+
     </div>
 
 
