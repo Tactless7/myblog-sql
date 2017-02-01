@@ -9,7 +9,15 @@
     <div class="ui container">
       <div class="ui huge centered header">Ajouter un article</div>
 
-      <form action="controllers/submit_form.php" method="post" class="ui form">
+      <form action="controllers/submit_form.php" method="post" class="ui form error">
+        
+      <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
+        <div class="ui error message">
+          <div class="header">Impossible d'ajouter l'article</div>
+          <p>Remplissez tous les champs.</p>
+        </div>
+      <?php endif ?>
+
         <div class="required field">
           <label for="title">Titre </label><input type="text" name="title" max="50"/>
         </div>
