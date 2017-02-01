@@ -10,7 +10,7 @@
       <div class="ui huge centered header">Ajouter un article</div>
 
       <form action="controllers/submit_form.php" method="post" class="ui form error">
-        
+
       <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
         <div class="ui error message">
           <div class="header">Impossible d'ajouter l'article</div>
@@ -27,7 +27,7 @@
         <div class="required field">
           <label for="content">Contenu </label><textarea name="content" rows="8" cols="80"></textarea>
         </div>
-        <button type="submit" class="ui green button">Ajouter</button>
+        <div type="submit" class="ui green button">Ajouter</div>
       </form>
     </div>
 
