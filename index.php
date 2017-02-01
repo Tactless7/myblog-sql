@@ -6,5 +6,6 @@
     require_once 'Model/Database.php';
 
     $displayAll = new DisplayController;
-    $displayAll->displayArticles();
+    $articles = $displayAll->displayArticles();
+    $displayAll->display($articles);
 }

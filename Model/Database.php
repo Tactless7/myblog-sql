@@ -13,9 +13,9 @@
     }
 
     public function connectToDb(){
-      ORM::configure('mysql:host='. $this->_host .';dbname='. $this->_databaseName .'');
-      ORM::configure('username', ''. $this->_username .'');
-      ORM::configure('password', ''. $this->_password .'');
+      ORM::configure('mysql:host='. $this->_host .';dbname='.$this->_databaseName);
+      ORM::configure('username',  $this->_username);
+      ORM::configure('password', $this->_password);
     }
 
     public function getArticles(){
