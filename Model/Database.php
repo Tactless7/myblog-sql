@@ -18,4 +18,8 @@
       ORM::configure('password', ''. $this->_password .'');
     }
 
+    public function getArticles(){
+      return ORM::for_table('posts')->find_many();
+    }
+
   }

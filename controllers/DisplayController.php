@@ -11,7 +11,7 @@
     public function displayArticles(){
       $allArticles = new Database('localhost', 'my_blog', 'root', 'root');
       $allArticles->connectToDb();
-      echo 'connecté';
+      $allArticles->getArticles();
     }
 
 
