@@ -19,13 +19,13 @@
       <?php endif ?>
 
         <div class="required field">
-          <label for="title">Titre </label><input type="text" name="title" max="50"/>
+          <label for="title">Titre </label><input type="text" name="title" max="50" value=""/>
         </div>
         <div class="required field">
-          <label for="author">Auteur </label><input type="text" name="author" max="50">
+          <label for="author">Auteur </label><input type="text" name="author" max="50" value=""/>
         </div>
         <div class="required field">
-          <label for="content">Contenu </label><textarea name="content" rows="8" cols="80"></textarea>
+          <label for="content">Contenu </label><textarea name="content" rows="8" cols="80" value=""></textarea>
         </div>
         <div type="submit" class="ui green button">Ajouter</div>
       </form>
