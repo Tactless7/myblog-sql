@@ -7,4 +7,9 @@
 
     }
 
+    public function editPost(){
+      $editPost = new Database('localhost', 'myblog', 'root', 'root');
+      $editPost->connectToDb();
+      $editPost->editData($this->idPost, $this->_title, $this->_author, $this->_content, $this->_updated_at);
+    }
   }
