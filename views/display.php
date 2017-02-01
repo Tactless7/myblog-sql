@@ -11,18 +11,23 @@
       <h1 class="ui huge marged centered header">Mon Blog</h1>
       <div class="ui fourteen wide columns grid">
         <div class="ui four wide columns">
-          <a href="index.php?p=form"><button class="ui button" type="button">Ajouter un article</button></a>
+          <a href="index.php?p=form"><button class="ui green button" type="button">Ajouter un article</button></a>
         </div>
-        <div class="ui fourteen wide columns">
-          <?php foreach ($articles as $value) :?>
-          <div class="ui card">
-            <div class="content">
-              <div class="header"><?= $value['title'] ?></div>
-              <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
-              <div class="description"><?= $value['content']?></div>
+        <div class="ui twelve wide column">
+          <div class="ui two wide cards">
+            <?php foreach ($articles as $value) :?>
+            <div class="ui card">
+              <div class="content">
+                <div class="header"><?= $value['title'] ?></div>
+                <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
+                <div class="description"><?= $value['content']?></div>
+              </div>
+              <div class="ui bottom attached button">
+                <i class="edit icon"></i>Editer
+              </div>
             </div>
+            <?php endforeach ?>
           </div>
-          <?php endforeach ?>
         </div>
       </div>
 
