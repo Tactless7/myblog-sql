@@ -18,7 +18,6 @@
 
   if(isset($_GET['id'])){
     //instanciation de la bdd
-    (new)
     //récupération des informations
     //values remplies avec getters
     require_once '../views/form.php'; //avec values remplies

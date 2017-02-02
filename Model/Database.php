@@ -31,4 +31,12 @@
       $post->save();
     }
 
+    public function editData($id, $title, $author, $content, $updated_at){
+      $edit = ORM::for_table('posts')->where('id', $id)->find_one();
+      $edit->title = $title;
+      $edit->author = $author;
+      $edit->content = $content;
+      $edit->updated_at = $updated_at;
+    }
+
   }
