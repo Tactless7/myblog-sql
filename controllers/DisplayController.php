@@ -4,12 +4,11 @@
     private $_database;
 
     public function display($articles){
-      include 'views/display.php';
+      require_once 'views/display.php';
     }
 
     public function displayArticles(){
-      $this->_database = new Database('localhost', 'my_blog', 'root', 'root');
-      $this->_database->connectToDb();
+      $this->_database = new Database();
       return $this->_database->getArticles();
     }
 
