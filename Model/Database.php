@@ -34,4 +34,7 @@
       $edit->updated_at = $updated_at;
     }
 
+    public function getArticleInfo($id){
+      return $this->_posts->find_one($id);
+    }
   }

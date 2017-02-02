@@ -18,8 +18,7 @@
     }
 
     public function savePost(){
-      $newPost = new Database('localhost', 'my_blog', 'root', 'root');
-      $newPost->connectToDb();
+      $newPost = new Database();
       $newPost->addData($this->_title, $this->_author, $this->_content, $this->_created_at);
     }
   }

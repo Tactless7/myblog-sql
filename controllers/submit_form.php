@@ -17,8 +17,11 @@
   }
 
   if(isset($_GET['id'])){
+    require_once './../Model/AddPost.php';
+    require_once './../Model/EditPost.php';
+    $edit = new EditPost($_GET['id']);
     //instanciation de la bdd
     //récupération des informations
     //values remplies avec getters
-    require_once '../views/form.php'; //avec values remplies
+    require_once '../views/edit.php'; //avec values remplies
   }
