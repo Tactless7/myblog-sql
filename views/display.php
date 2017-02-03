@@ -23,7 +23,7 @@
                 <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
                 <div class="description"><?= $value['content']?></div>
               </div>
-              <a href="./controllers/submit_form.php?id=<?= $value['id']?>"><div class="ui bottom attached button">
+              <a href="./controllers/edit_form.php?id=<?= $value['id']?>"><div class="ui bottom attached button">
                 <i class="edit icon"></i>Editer
               </div></a>
             </div>
