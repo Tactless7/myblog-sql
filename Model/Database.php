@@ -38,4 +38,13 @@
     public function getArticleInfo($id){
       return $this->_posts->find_one($id);
     }
+
+    public function addComment($author, $content, $post_id){
+      $comment = $this->_comments->create();
+      $comment->author = $author;
+      $comment->content = $content;
+      $comment->post_id = $post_id;
+      $comment->created_at = date('Y-m-d');
+      $comment->save();
+    }
   }
