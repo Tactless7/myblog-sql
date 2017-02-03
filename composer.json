@@ -8,5 +8,10 @@
             "name": "Juliane Blier",
             "email": "blier.juliane@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+    	"psr-4" : {
+    		"JulianeB\\MyBlog":"src/"
+    	}
+    }
 }
