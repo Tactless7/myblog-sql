@@ -34,6 +34,7 @@
                   </div>
                 <?php endif ?>
 
+                  <input type="hidden" name="post_id" value="<?= $value['id'] ?>">
                   <div class="required field">
                     <label for="author">Auteur </label><input type="text" name="author" max="50"/>
                   </div>
