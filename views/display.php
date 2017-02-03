@@ -54,10 +54,10 @@
                 </form>
               </div>
               <div>
-              <a href="./controllers/edit_form.php?id=<?= $post['id']?>"><div class="ui bottom attached button">
-                <i class="edit icon"></i>Editer
-              </div></a>
-            </div>
+                <a href="./controllers/edit_form.php?id=<?= $post['id']?>"><div class="ui bottom attached button">
+                  <i class="edit icon"></i>Editer
+                </div></a>
+              </div>
           </div>
         <?php endforeach ?>
         </div>
