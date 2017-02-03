@@ -5,13 +5,10 @@
   use JulianeB\MyBlog\Controllers\DisplayController;
 
   if(!isset($_GET['p'])){
-
     $displayAll = new DisplayController;
     $articles = $displayAll->displayArticles();
     $comments = $displayAll->displayComments();
     $displayAll->display($articles, $comments);
-  } else {
-    if($_GET['p'] === 'form'){
-      require_once BASEPATH.'/src/Views/form.php';
-    }
+  } elseif($_GET['p'] === 'form'){
+    require_once BASEPATH.'/src/Views/form.php';
   }

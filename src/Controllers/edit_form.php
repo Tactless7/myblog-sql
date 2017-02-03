@@ -2,7 +2,6 @@
   session_start();
   define('BASEPATH', __DIR__.'/../..');
   $basepath = './../..';
-  // $_SESSION['error'] = false;
   require_once BASEPATH.'/vendor/autoload.php';
   use JulianeB\MyBlog\Models\EditPost;
 
