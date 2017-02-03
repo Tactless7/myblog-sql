@@ -17,6 +17,10 @@
       return $this->_posts->find_many();
     }
 
+    public function getComments(){
+      return $this->_comments->find_many();
+    }
+
     public function addData($title, $author, $content, $created_at){
       $post = $this->_posts->create();
       $post->title = $title;

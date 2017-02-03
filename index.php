@@ -9,7 +9,8 @@
 
     $displayAll = new DisplayController;
     $articles = $displayAll->displayArticles();
-    $displayAll->display($articles);
+    $comments = $displayAll->displayComments();
+    $displayAll->display($articles, $comments);
   } else {
     if($_GET['p'] === 'form'){
       require_once BASEPATH.'/views/form.php';

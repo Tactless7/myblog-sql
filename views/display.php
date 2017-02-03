@@ -10,19 +10,28 @@
 
       <h1 class="ui huge marged centered header">Mon Blog</h1>
       <div class="ui fourteen wide column grid">
-        <div class="ui four wide column">
+        <div class="ui three wide column">
           <a href="index.php?p=form"><button class="ui green button" type="button">Ajouter un article</button></a>
         </div>
-        <div class="ui twelve wide column">
+        <div class="ui thirteen wide column">
           <div class="ui one wide cards">
 
-            <?php foreach ($articles as $value) :?>
+            <?php foreach ($articles as $post) :?>
             <div class="ui card">
               <div class="content">
-                <div class="header"><?= $value['title'] ?></div>
-                <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
-                <div class="description"><?= $value['content']?></div>
+                <div class="header"><?= $post['title'] ?></div>
+                <div class="meta"><?= $post['author']?>, <?= $post['created_at']?></div>
+                <div class="description"><?= $post['content']?></div>
               </div>
+
+              <?php foreach ($comments as $comment): ?>
+                <?php if ($comment['post_id'] === $post['id']): ?>
+              <div class="content">
+                <div class="meta"><?= $comment['author'] ?></div>
+                <div class="description"><?= $comment['content'] ?></div>
+              </div>
+                <?php endif; ?>
+              <?php endforeach; ?>
 
               <div class="content">
                 <form action="../controllers/submit_comment.php" method="post" class="ui tiny form error">
@@ -34,7 +43,7 @@
                   </div>
                 <?php endif ?>
 
-                  <input type="hidden" name="post_id" value="<?= $value['id'] ?>">
+                  <input type="hidden" name="post_id" value="<?= $post['id'] ?>">
                   <div class="required field">
                     <label for="author">Auteur </label><input type="text" name="author" max="50"/>
                   </div>
@@ -45,7 +54,7 @@
                 </form>
               </div>
               <div>
-              <a href="./controllers/edit_form.php?id=<?= $value['id']?>"><div class="ui bottom attached button">
+              <a href="./controllers/edit_form.php?id=<?= $post['id']?>"><div class="ui bottom attached button">
                 <i class="edit icon"></i>Editer
               </div></a>
             </div>
