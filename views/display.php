@@ -14,7 +14,7 @@
           <a href="index.php?p=form"><button class="ui green button" type="button">Ajouter un article</button></a>
         </div>
         <div class="ui twelve wide column">
-          <div class="ui two wide cards">
+          <div class="ui one wide cards">
 
             <?php foreach ($articles as $value) :?>
             <div class="ui card">
@@ -23,13 +23,33 @@
                 <div class="meta"><?= $value['author']?>, <?= $value['created_at']?></div>
                 <div class="description"><?= $value['content']?></div>
               </div>
+
+              <div class="content">
+                <form action="../controllers/submit_comment.php" method="post" class="ui tiny form error">
+
+                <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
+                  <div class="ui error message">
+                    <div class="header">Impossible d'ajouter le commentaire</div>
+                    <p>Remplissez tous les champs.</p>
+                  </div>
+                <?php endif ?>
+
+                  <div class="required field">
+                    <label for="author">Auteur </label><input type="text" name="author" max="50"/>
+                  </div>
+                  <div class="required field">
+                    <label for="content">Contenu </label><textarea name="content" rows="3" cols="70"></textarea>
+                  </div>
+                  <button type="submit" class="ui inverted green button">Commenter</button>
+                </form>
+              </div>
+              <div>
               <a href="./controllers/edit_form.php?id=<?= $value['id']?>"><div class="ui bottom attached button">
                 <i class="edit icon"></i>Editer
               </div></a>
             </div>
-            <?php endforeach ?>
-
           </div>
+        <?php endforeach ?>
         </div>
       </div>
 
