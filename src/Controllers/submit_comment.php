@@ -1,17 +1,18 @@
 <?php
   session_start();
+  define('BASEPATH', __DIR__.'/../..');
+  $basepath = './../..';
   $_SESSION['commentError'] = false;
-  require_once './../vendor/autoload.php';
-  require_once './../Model/Database.php';
+  require_once BASEPATH.'/vendor/autoload.php';
+  use JulianeB\MyBlog\Models\AddComment;
 
   if ( $_SERVER['REQUEST_METHOD'] === 'POST' && (!$_POST['author'] || !$_POST['content'])) {
     $_SESSION['error'] = true;
-    header('Location: ../index.php');
+    header("Location: $basepath/index.php");
   } elseif($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['author'] && $_POST['content']){
-    require_once './../Model/AddComment.php';
 
     (new AddComment())->saveComment();
     $_SESSION['error'] = false;
 
-    header('Location: ../index.php');
+    header("Location: $basepath/index.php");
   }

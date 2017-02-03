@@ -9,7 +9,7 @@
     <div class="ui container">
       <div class="ui huge centered header">Ajouter un article</div>
 
-      <form action="./controllers/submit_form.php" method="post" class="ui form error">
+      <form action="./src/Controllers/submit_form.php" method="post" class="ui form error">
 
       <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
         <div class="ui error message">

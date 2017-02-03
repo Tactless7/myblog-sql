@@ -9,7 +9,7 @@
     <div class="ui container">
       <div class="ui huge centered header">Editer un article</div>
 
-      <form action="../controllers/edit_form.php" method="post" class="ui form error">
+      <form action="./edit_form.php" method="post" class="ui form error">
 
       <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
         <div class="ui error message">

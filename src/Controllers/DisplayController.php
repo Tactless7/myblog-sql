@@ -1,5 +1,9 @@
 <?php
 
+  namespace JulianeB\MyBlog\Controllers;
+
+  use JulianeB\MyBlog\Models\Database;
+
   class DisplayController {
     private $_database;
 
@@ -8,7 +12,7 @@
     }
 
     public function display($articles, $comments){
-      require_once 'views/display.php';
+      require_once BASEPATH.'/src/Views/display.php';
     }
 
     public function displayArticles(){

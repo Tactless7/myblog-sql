@@ -1,4 +1,11 @@
 <?php
+
+  namespace JulianeB\MyBlog\Models;
+
+  use ORM;
+  use JulianeB\MyBlog\Models\AddPost;
+  use JulianeB\MyBlog\Models\Database;
+
   class EditPost extends AddPost {
     private $_idPost;
     private $_updated_at;

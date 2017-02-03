@@ -10,8 +10,8 @@
         }
     ],
     "autoload": {
-    	"psr-4" : {
-    		"JulianeB\\MyBlog":"src/"
+    	"psr-4": {
+    		"JulianeB\\MyBlog\\":"src/"
     	}
     }
 }

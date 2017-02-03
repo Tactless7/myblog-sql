@@ -34,7 +34,7 @@
               <?php endforeach; ?>
 
               <div class="content">
-                <form action="../controllers/submit_comment.php" method="post" class="ui tiny form error">
+                <form action="./src/Controllers/submit_comment.php" method="post" class="ui tiny form error">
 
                 <?php if(isset($_SESSION['error']) && $_SESSION['error']) :?>
                   <div class="ui error message">
@@ -54,7 +54,7 @@
                 </form>
               </div>
               <div>
-                <a href="./controllers/edit_form.php?id=<?= $post['id']?>"><div class="ui bottom attached button">
+                <a href="./src/Controllers/edit_form.php?id=<?= $post['id']?>"><div class="ui bottom attached button">
                   <i class="edit icon"></i>Editer
                 </div></a>
               </div>

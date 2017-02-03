@@ -1,5 +1,10 @@
 <?php
 
+  namespace JulianeB\MyBlog\Models;
+
+  use ORM;
+  use JulianeB\MyBlog\Models\Database;
+
   class AddComment {
     private $_author;
     private $_content;

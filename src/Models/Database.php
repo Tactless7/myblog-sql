@@ -1,4 +1,9 @@
 <?php
+
+  namespace JulianeB\MyBlog\Models;
+
+  use ORM;
+
   class Database {
     private $_comments;
     private $_posts;

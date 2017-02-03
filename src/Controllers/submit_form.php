@@ -1,24 +1,24 @@
 <?php
   session_start();
+  define('BASEPATH', __DIR__.'/../..');
+  $basepath = './../..';
   $_SESSION['error'] = false;
-  require_once './../vendor/autoload.php';
-  require_once './../Model/Database.php';
+  require_once BASEPATH.'/vendor/autoload.php';
+  use JulianeB\MyBlog\Models\AddPost;
+  // use JulianeB\MyBlog\Models\EditPost;
 
   if ( $_SERVER['REQUEST_METHOD'] === 'POST' && (!$_POST['title'] || !$_POST['author'] || !$_POST['content'])) {
     $_SESSION['error'] = true;
-    header('Location: ../index.php?p=form');
+    header("Location: $basepath/index.php?p=form");
   } elseif($_SERVER['REQUEST_METHOD'] === 'POST' && $_POST['title'] && $_POST['author'] && $_POST['content']){
-    require_once './../Model/AddPost.php';
 
     (new AddPost())->savePost();
     $_SESSION['error'] = false;
 
-    header('Location: ../index.php');
+    header("Location: $basepath/index.php");
   }
 
-  if(isset($_GET['id'])){
-    require_once './../Model/AddPost.php';
-    require_once './../Model/EditPost.php';
-    $edit = new EditPost($_GET['id']);
-    require_once '../views/edit.php';
-  }
+  // if(isset($_GET['id'])){
+  //   $edit = new EditPost($_GET['id']);
+  //   require_once BASEPATH.'/src/Views/edit.php';
+  // }
